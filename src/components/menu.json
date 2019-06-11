@@ -1,0 +1,54 @@
+[
+  {
+    "menuId": 1,
+    "menuGroupCode": "SYSTEM_MANAGER",
+    "menuName": "홈",
+    "program": {
+      "programId": "home",
+      "programName": "홈",
+      "programPath": "/home/index.html"
+    },
+    "subMenus" : [
+      {
+        "menuId": 4,
+        "menuGroupCode": "SYSTEM_MANAGER",
+        "menuName": "대시보드",
+        "program": {
+          "programId": "dashboard",
+          "programName": "대시보드",
+          "programPath": "/home/dachboard.html"
+        }
+      },
+      {
+        "menuId": 5,
+        "menuGroupCode": "SYSTEM_MANAGER",
+        "menuName": "통계",
+        "program": {
+          "programId": "report",
+          "programName": "통계",
+          "programPath": "/home/report.html"
+        }
+      }
+    ]
+  },
+  {
+    "menuId": 2,
+    "menuGroupCode": "SYSTEM_MANAGER",
+    "menuName": "고객문의",
+    "program": {
+      "programId": "voc",
+      "programName": "고객문의",
+      "programPath": "/voc/inquiry.html"
+    }
+  },
+  {
+    "menuId": 3,
+    "menuGroupCode": "SYSTEM_MANAGER",
+    "menuName": "FAQ",
+    "program": {
+      "programId": "faq",
+      "programName": "FAQ",
+      "programPath": "/faq/faq.html"
+    }
+  }
+]
