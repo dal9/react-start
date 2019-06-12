@@ -6,9 +6,28 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/menu/Sidebar";
+import DataList from "./components/list/DataList";
 
-ReactDOM.render(<Sidebar />, document.getElementById('root'));
+import data from "./components/list/data.json";
+
+const dataHead = [
+    {
+        "code": "식별 코드"
+    },
+    {
+        "name": "이름"
+    },
+    {
+        "authorizationUrl": "인증 URL"
+    },
+    {
+        "createdDatetime": "생성일시"
+    }
+];
+
+
+ReactDOM.render(<DataList isSmall dataHead={dataHead} dataList={data}/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

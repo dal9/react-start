@@ -1,0 +1,146 @@
+[
+  {
+    "code": "CVNET",
+    "name": "CVnet1",
+    "createdDatetime": "2019-06-04 04:00:31",
+    "links": [
+      {
+        "rel": "self",
+        "href": "http://localhost:8010/manufacturers/CVNET",
+        "hreflang": null,
+        "media": null,
+        "title": null,
+        "type": null,
+        "deprecation": null
+      }
+    ]
+  },
+  {
+    "code": "CVNET",
+    "name": "CVnet2",
+    "createdDatetime": "2019-06-04 04:00:31",
+    "links": [
+      {
+        "rel": "self",
+        "href": "http://localhost:8010/manufacturers/CVNET",
+        "hreflang": null,
+        "media": null,
+        "title": null,
+        "type": null,
+        "deprecation": null
+      }
+    ]
+  },
+  {
+    "code": "CVNET",
+    "name": "CVnet3",
+    "createdDatetime": "2019-06-04 04:00:31",
+    "links": [
+      {
+        "rel": "self",
+        "href": "http://localhost:8010/manufacturers/CVNET",
+        "hreflang": null,
+        "media": null,
+        "title": null,
+        "type": null,
+        "deprecation": null
+      }
+    ]
+  },
+  {
+    "code": "SAMSUNG",
+    "name": "공기청정기",
+    "createdDatetime": "2019-06-05 04:00:31",
+    "links": [
+      {
+        "rel": "self",
+        "href": "http://localhost:8010/manufacturers/SAMSUNG",
+        "hreflang": null,
+        "media": null,
+        "title": null,
+        "type": null,
+        "deprecation": null
+      }
+    ]
+  },
+  {
+    "code": "CVNET",
+    "name": "CVnet5",
+    "createdDatetime": "2019-06-04 04:00:31",
+    "links": [
+      {
+        "rel": "self",
+        "href": "http://localhost:8010/manufacturers/CVNET",
+        "hreflang": null,
+        "media": null,
+        "title": null,
+        "type": null,
+        "deprecation": null
+      }
+    ]
+  },
+  {
+    "code": "SAMSUNG",
+    "name": "에어컨",
+    "createdDatetime": "2019-06-05 04:00:31",
+    "links": [
+      {
+        "rel": "self",
+        "href": "http://localhost:8010/manufacturers/SAMSUNG",
+        "hreflang": null,
+        "media": null,
+        "title": null,
+        "type": null,
+        "deprecation": null
+      }
+    ]
+  },
+  {
+    "code": "CVNET",
+    "name": "CVnet6",
+    "createdDatetime": "2019-06-04 04:00:31",
+    "links": [
+      {
+        "rel": "self",
+        "href": "http://localhost:8010/manufacturers/CVNET",
+        "hreflang": null,
+        "media": null,
+        "title": null,
+        "type": null,
+        "deprecation": null
+      }
+    ]
+  },
+  {
+    "code": "CVNET",
+    "name": "CVnet7",
+    "createdDatetime": "2019-06-04 04:00:31",
+    "links": [
+      {
+        "rel": "self",
+        "href": "http://localhost:8010/manufacturers/CVNET",
+        "hreflang": null,
+        "media": null,
+        "title": null,
+        "type": null,
+        "deprecation": null
+      }
+    ]
+  },
+  {
+    "code": "CVNET",
+    "name": "CVnet8",
+    "createdDatetime": "2019-06-04 04:00:31",
+    "links": [
+      {
+        "rel": "self",
+        "href": "http://localhost:8010/manufacturers/CVNET",
+        "hreflang": null,
+        "media": null,
+        "title": null,
+        "type": null,
+        "deprecation": null
+      }
+    ]
+  }
+]
