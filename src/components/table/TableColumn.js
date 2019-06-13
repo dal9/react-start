@@ -5,6 +5,6 @@ export default function TableColumn(props) {
     const {colspan, className} = props;
 
     return (
-        <td className={className} colspan={colspan}>{props.children}</td>
+        <td className={className} colSpan={colspan}>{props.children}</td>
     );
 }

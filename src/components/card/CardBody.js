@@ -4,13 +4,13 @@ import classnames from 'classnames/bind';
 
 const cx = classnames.bind();
 
-export default function Table(props) {
+export default function CardBody(props) {
 
     const {className} = props;
 
     return (
-        <table className={cx("table", className)}>
+        <div className={cx("card-body", className)}>
             {props.children}
-        </table>
+        </div>
     );
 }

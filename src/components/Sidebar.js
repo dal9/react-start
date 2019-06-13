@@ -1,6 +1,6 @@
 import React from 'react';
-import menu from './menu.json';
-import MenuList from "./MenuList";
+import menu from './menu/menu.json';
+import {MenuList} from "./menu";
 
 export default function Sidebar() {
     return (

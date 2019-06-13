@@ -28,7 +28,7 @@ export default function DataGrid(props) {
     if(!dataHead) return null;
 
     return (
-        <Table className={cx("table", "table-hover", {"table-sm": isSmall})}>
+        <Table className={cx("table-hover", {"table-sm": isSmall})}>
             <TableHeader>
                 <TableRow className="table-active">
                     <TableHeaderColumn scop="col">#</TableHeaderColumn>
