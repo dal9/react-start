@@ -4,14 +4,12 @@ import 'jquery';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Sidebar from "./components/Sidebar";
-import DataList from "./components/list/DataList";
 
 import data from "./components/list/data.json";
 import List from "./components/List";
 import CreateForm from "./components/CreateForm";
+import ScheduleApp from "./ScheduleApp";
 
 const manufacturesGridHead = [
     {
@@ -54,7 +52,7 @@ function ManufacturerCreate() {
 }
 
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<ScheduleApp/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
