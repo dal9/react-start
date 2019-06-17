@@ -11,6 +11,7 @@ import DataList from "./components/list/DataList";
 
 import data from "./components/list/data.json";
 import List from "./components/List";
+import CreateForm from "./components/CreateForm";
 
 const manufacturesGridHead = [
     {
@@ -28,11 +29,11 @@ const manufacturesGridHead = [
 ];
 
 const pageInfo = {
-    totalPages : 3,
+    totalPages: 3,
     pageNumber: 1,
     pageSize: 20,
-    first : true,
-    last : true
+    first: true,
+    last: true
 };
 
 function ManufacturerPage() {
@@ -44,8 +45,16 @@ function ManufacturerPage() {
     );
 }
 
+function ManufacturerCreate() {
+    return (
+        <div className="container-fluid">
+            <CreateForm isReadOnly/>
+        </div>
+    );
+}
 
-ReactDOM.render(<ManufacturerPage/>, document.getElementById('root'));
+
+ReactDOM.render(<App/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

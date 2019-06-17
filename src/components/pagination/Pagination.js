@@ -29,19 +29,19 @@ export default function Pagination(props) {
                     let disabled = false;
                     let attr = {};
 
-                    if((first || last) && (pageNum == "<" || pageNum == ">")) {
+                    if((first || last) && (pageNum === "<" || pageNum === ">")) {
                         disabled = true;
                         attr = {"aria-disabled" : true};
                     }
 
-                    if(pageNum == pageNumber) {
+                    if(pageNum === pageNumber) {
                         active = true;
                         attr = {"aria-current" : "page"};
                     }
 
                     return (
                         <PageItem className={cx({"active" : active},{"disabled" : disabled})} key={index} {...attr}>
-                            <PageLink href="#">{pageNum}{pageNum == pageNumber && (<span className="sr-only">(current)</span>)}</PageLink>
+                            <PageLink href="#">{pageNum}{pageNum === pageNumber && (<span className="sr-only">(current)</span>)}</PageLink>
                         </PageItem>
                     )
                 })}

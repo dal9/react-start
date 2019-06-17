@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 
 export default function EventPractice(props) {
+
     const [message, setMassage] = useState("");
     const [username, setUsername] = useState("");
 

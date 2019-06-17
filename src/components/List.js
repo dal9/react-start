@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardBody, CardHeader, CardText, CardTitle} from "./card";
+import {Card, CardBody, CardHeader, CardText} from "./card";
 import DataGrid from "./list/DataList";
 import {Pagination} from "./pagination";
 
