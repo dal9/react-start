@@ -8,14 +8,14 @@ const cx = classnames.bind(styles);
 
 export default function Counter(props) {
 
-    const {number, color, onIncrement, onDecrement, onSetColor} = props;
+    const {number, color, index, onIncrement, onDecrement, onSetColor} = props;
 
     return (
-        <div className={cx("counter")} onClick={onIncrement} onContextMenu={(e) => {
+        <div className={cx("counter")} onClick={() => onIncrement(index)} onContextMenu={(e) => {
             e.preventDefault();
-            onDecrement();
+            onDecrement(index);
         }}
-             onDoubleClick={onSetColor}
+             onDoubleClick={() => onSetColor(index)}
              style={{
                  backgroundColor: color
              }}
@@ -23,19 +23,21 @@ export default function Counter(props) {
             {number}
         </div>
     );
-};
+}
 
 Counter.propTypes = {
-  number : PropTypes.number,
-  color : PropTypes.string,
-  onIncrement : PropTypes.func,
-  onDecrement : PropTypes.func,
-  onSetColor : PropTypes.func
+    index: PropTypes.number,
+    number: PropTypes.number,
+    color: PropTypes.string,
+    onIncrement: PropTypes.func,
+    onDecrement: PropTypes.func,
+    onSetColor: PropTypes.func
 };
 
 Counter.defaultProps = {
-  number : 0,
-    color : 'black',
+    index: 0,
+    number: 0,
+    color: 'black',
     onIncrement: () => console.warn('onIncrement not defined'),
     onDecrement: () => console.warn('onDecrement not defined'),
     onSetColor: () => console.warn('onSetColor not defined')
