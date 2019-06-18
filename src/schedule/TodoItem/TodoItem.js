@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useMemo} from 'react';
 import styles from './TodoItem.modules.scss';
 import classnames from 'classnames/bind';
 
@@ -15,7 +15,8 @@ export default function TodoItem(props) {
             <div className={cx('delete')} onClick={(e) => {
                 onRemove();
                 e.stopPropagation();
-            }}>[지우기]</div>
+            }}>[지우기]
+            </div>
         </div>
     );
 }

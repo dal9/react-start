@@ -1,4 +1,4 @@
-import React, {useState, useMemo} from 'react';
+import React, {useCallback, useState} from 'react';
 import './App.css';
 import PageTemplate from "./schedule";
 import TodoInput from "./schedule/TodoInput";
@@ -7,14 +7,14 @@ import TodoList from "./schedule/TodoList";
 
 let id = 1;
 
-const initialTodos = new Array(500).fill(0).map(
-    (foo, index) => ({id: index, text : `일정 ${index}`, done: false})
+const initialTodo = new Array(500).fill(0).map(
+    (foo, index) => ({id: index, text: `일정 ${index}`, done: false})
 );
 
 function ScheduleApp(props) {
 
     const [input, setInput] = useState("");
-    const [todos, setTodos] = useState(initialTodos);
+    const [todo, setTodo] = useState(initialTodo);
 
     const handleChange = (e) => {
         setInput(e.target.value);
@@ -32,40 +32,43 @@ function ScheduleApp(props) {
         };
 
         setInput("");
-        setTodos([...todos, newTodo]);
+        setTodo([...todo, newTodo]);
     };
 
     const handleToggle = (id) => {
-        const index = todos.findIndex(todo => todo.id === id);
+        const index = todo.findIndex(item => item.id === id);
 
         const toggled = {
-            ...todos[index],
-            done: !todos[index].done
+            ...todo[index],
+            done: !todo[index].done
         };
 
-        setTodos([
-            ...todos.slice(0, index),
+        setTodo([
+            ...todo.slice(0, index),
             toggled,
-            ...todos.slice(index + 1, todos.length)
+            ...todo.slice(index + 1, todo.length)
         ]);
 
     };
 
     const handleRemove = (id) => {
-        const index = todos.findIndex(todo => todo.id === id);
+        const index = todo.findIndex(item => item.id === id);
 
-        setTodos([
-            ...todos.slice(0, index),
-            ...todos.slice(index + 1, todos.length)
+        setTodo([
+            ...todo.slice(0, index),
+            ...todo.slice(index + 1, todo.length)
         ]);
     };
 
-    const todoList = useMemo(() => <TodoList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>, [todos]);
+
+    const todoList = todo => (<TodoList todo={todo} onToggle={handleToggle} onRemove={handleRemove}/>);
+
+    const todoListCallback = useCallback(todoList(todo), [todo]);
 
     return (
         <PageTemplate>
             <TodoInput onChange={handleChange} onInsert={handleInsert} value={input}/>
-            {todoList}
+            {todoListCallback}
         </PageTemplate>
     );
 }

@@ -28,12 +28,12 @@
     }
   }
   &:nth-child(odd) {
-    background: gray;
+    background: lightgray;
   }
   &:hover {
     background: darkgray;
   }
 }
 .todo-item + .todo-item {
-  border-top: 1px solid gray;
+  border-top: 1px solid darkgray;
 }
