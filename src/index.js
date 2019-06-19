@@ -10,6 +10,7 @@ import data from "./components/list/data.json";
 import List from "./components/List";
 import CreateForm from "./components/CreateForm";
 import ScheduleApp from "./ScheduleApp";
+import ScheduleAppWithRedux from "./ScheduleAppWithRedux";
 import App from "./App";
 import AppContainer from './redux/containers/App';
 
@@ -17,8 +18,10 @@ import {createStore} from 'redux';
 import reducers from './redux/reducers';
 import {Provider} from 'react-redux';
 
-const store = createStore(reducers, window.devToolsExtension && window.devToolsExtension());
+import scheduleReducers from './modules';
 
+const store = createStore(reducers, window.devToolsExtension && window.devToolsExtension());
+const scheduleStore = createStore(scheduleReducers, window.devToolsExtension && window.devToolsExtension());
 const manufacturesGridHead = [
     {
         "code": "식별 코드"
@@ -60,10 +63,16 @@ function ManufacturerCreate() {
 }
 
 
-ReactDOM.render(
+/*ReactDOM.render(
     <Provider store={store}>
         <AppContainer/>
+    </Provider>, document.getElementById('root'));*/
+ReactDOM.render(
+    <Provider store={scheduleStore}>
+        <ScheduleAppWithRedux/>
     </Provider>, document.getElementById('root'));
+
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
