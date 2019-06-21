@@ -5,7 +5,7 @@ import {Pagination} from "./pagination";
 
 export default function List(props) {
 
-    const {title, pageable, pageInfo} = props;
+    const {title, pageable, pageInfo, onClick, onPageClick} = props;
 
     return (
         <Card>
@@ -13,9 +13,9 @@ export default function List(props) {
                 <CardText>{title}</CardText>
             </CardHeader>
             <CardBody>
-                <DataGrid {...props}/>
+                <DataGrid {...props} onClick={onClick}/>
                 {pageable && (
-                    <Pagination {...pageInfo}/>
+                    <Pagination {...pageInfo} onPageClick={onPageClick}/>
                 )}
             </CardBody>
         </Card>

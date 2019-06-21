@@ -23,7 +23,7 @@ const dataHead = [
 
 export default function DataGrid(props) {
 
-    const {dataHead, dataList, isSmall} = props;
+    const {dataHead, dataList, isSmall, onClick} = props;
 
     if(!dataHead) return null;
 
@@ -37,7 +37,7 @@ export default function DataGrid(props) {
             </TableHeader>
             <TableBody>
                 {dataList && dataList.map((item, index) => (
-                    <TableRow key={index}>
+                    <TableRow key={index} onClick={() => onClick(index)}>
                         <TableHeaderColumn scope="row">{index}</TableHeaderColumn>
                         {dataHead.map((data, index) => <TableColumn key={index}>{item[Object.keys(data)]}</TableColumn>)}
                     </TableRow>

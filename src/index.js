@@ -6,7 +6,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from './serviceWorker';
 
-import data from "./components/list/data.json";
+import data from "./json/data.json";
 import List from "./components/List";
 import CreateForm from "./components/CreateForm";
 import ScheduleApp from "./ScheduleApp";
@@ -19,40 +19,13 @@ import reducers from './redux/reducers';
 import {Provider} from 'react-redux';
 
 import scheduleReducers from './modules';
+import Manufacturer from "./pages";
 
 const store = createStore(reducers, window.devToolsExtension && window.devToolsExtension());
 const scheduleStore = createStore(scheduleReducers, window.devToolsExtension && window.devToolsExtension());
-const manufacturesGridHead = [
-    {
-        "code": "식별 코드"
-    },
-    {
-        "name": "이름"
-    },
-    {
-        "authorizationUrl": "인증 URL"
-    },
-    {
-        "createdDatetime": "생성일시"
-    }
-];
 
-const pageInfo = {
-    totalPages: 3,
-    pageNumber: 1,
-    pageSize: 20,
-    first: true,
-    last: true
-};
 
-function ManufacturerPage() {
-    return (
-        <div className="container-fluid">
 
-            <List title={"제품목록"} isSmall dataHead={manufacturesGridHead} dataList={data} pageable pageInfo={pageInfo}/>
-        </div>
-    );
-}
 
 function ManufacturerCreate() {
     return (
@@ -63,14 +36,15 @@ function ManufacturerCreate() {
 }
 
 
+ReactDOM.render(<Manufacturer/>, document.getElementById('root'));
 /*ReactDOM.render(
     <Provider store={store}>
         <AppContainer/>
     </Provider>, document.getElementById('root'));*/
-ReactDOM.render(
+/*ReactDOM.render(
     <Provider store={scheduleStore}>
         <ScheduleAppWithRedux/>
-    </Provider>, document.getElementById('root'));
+    </Provider>, document.getElementById('root'));*/
 
 
 

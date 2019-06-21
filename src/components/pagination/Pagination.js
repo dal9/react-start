@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import classnames from 'classnames/bind';
 import PageItem from "./PageItem";
 import PageLink from "./PageLink";
@@ -8,7 +8,12 @@ const cx = classnames.bind();
 
 export default function Pagination(props) {
 
-    const {className, totalPages, pageNumber, pageSize, first, last} = props;
+    const {className, totalPages, pageSize, onPageClick} = props;
+
+    const [pageNumber, setPageNumber] = useState(1);
+
+    const [first, setFirst] = useState(false);
+    const [last, setLast] = useState(false);
 
     const range = () => {
         const pages = [];
@@ -18,7 +23,36 @@ export default function Pagination(props) {
         }
         pages.push(">");
         return pages;
-    }
+    };
+
+    const handleGotoPage = (gotoPage) => {
+
+        switch(gotoPage){
+            case "<" :
+                gotoPage = pageNumber - 1;
+                break;
+            case ">" :
+                gotoPage = pageNumber + 1;
+                break;
+            default :
+        }
+        console.log(gotoPage);
+
+        setPageNumber(gotoPage);
+    };
+
+    useEffect(() => {
+        if (pageNumber === 1) {
+            setFirst(true);
+        } else {
+            setFirst(false);
+        }
+        if (pageNumber === totalPages) {
+            setLast(true);
+        } else {
+            setLast(false);
+        }
+    });
 
     return (
         <nav aria-label="Page navigation">
@@ -29,7 +63,7 @@ export default function Pagination(props) {
                     let disabled = false;
                     let attr = {};
 
-                    if((first || last) && (pageNum === "<" || pageNum === ">")) {
+                    if((first && pageNum === "<") || ( last && pageNum === ">")) {
                         disabled = true;
                         attr = {"aria-disabled" : true};
                     }
@@ -41,7 +75,7 @@ export default function Pagination(props) {
 
                     return (
                         <PageItem className={cx({"active" : active},{"disabled" : disabled})} key={index} {...attr}>
-                            <PageLink href="#">{pageNum}{pageNum === pageNumber && (<span className="sr-only">(current)</span>)}</PageLink>
+                            <PageLink href="#" onClick={() => handleGotoPage(pageNum)}>{pageNum}{pageNum === pageNumber && (<span className="sr-only">(current)</span>)}</PageLink>
                         </PageItem>
                     )
                 })}
