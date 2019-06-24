@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardBody, CardHeader, CardText} from "./card";
+import {Card, CardBody, CardHeader, CardTitle} from "./card";
 import DataGrid from "./list/DataList";
 import {Pagination} from "./pagination";
 
@@ -9,15 +9,13 @@ export default function List(props) {
 
     return (
         <Card>
-            <CardHeader className={"bg-transparent font-weight-bold"}>
-                <CardText>{title}</CardText>
+            <CardHeader className={"bg-transparent"}>
+                <CardTitle>{title}</CardTitle>
             </CardHeader>
-            <CardBody>
                 <DataGrid {...props} onClick={onClick}/>
                 {pageable && (
                     <Pagination {...pageInfo} onPageClick={onPageClick}/>
                 )}
-            </CardBody>
         </Card>
     );
 }

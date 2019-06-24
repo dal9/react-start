@@ -41,7 +41,7 @@ export default function Manufacturer(props) {
 
     const handlePageClick = (num) => {
         console.log(num);
-    }
+    };
 
     return (
         <div className={"container-fluid"}>

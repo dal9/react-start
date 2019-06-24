@@ -30,15 +30,15 @@ export default function DataGrid(props) {
     return (
         <Table className={cx("table-hover", {"table-sm": isSmall})}>
             <TableHeader>
-                <TableRow className="table-active">
-                    <TableHeaderColumn scop="col">#</TableHeaderColumn>
+                <TableRow>
+                    <TableHeaderColumn scop="col" className={cx("pl-4")}>#</TableHeaderColumn>
                     {dataHead && dataHead.map((data, index) => <TableHeaderColumn key={index} scope="col">{Object.values(data)}</TableHeaderColumn>)}
                 </TableRow>
             </TableHeader>
             <TableBody>
                 {dataList && dataList.map((item, index) => (
                     <TableRow key={index} onClick={() => onClick(index)}>
-                        <TableHeaderColumn scope="row">{index}</TableHeaderColumn>
+                        <TableHeaderColumn scope="row" className={cx("pl-4")}>{index}</TableHeaderColumn>
                         {dataHead.map((data, index) => <TableColumn key={index}>{item[Object.keys(data)]}</TableColumn>)}
                     </TableRow>
                 ))}

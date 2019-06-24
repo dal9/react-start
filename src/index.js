@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'jquery';
 import 'bootstrap/dist/js/bootstrap.bundle';
-import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './fonts.css';
+import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 import data from "./json/data.json";
