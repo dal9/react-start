@@ -20,7 +20,8 @@ import reducers from './redux/reducers';
 import {Provider} from 'react-redux';
 
 import scheduleReducers from './modules';
-import Manufacturer from "./pages";
+import ManufacturerProvider from "./pages";
+import ManufacturerForm from "./pages/ManufacturerForm";
 
 const store = createStore(reducers, window.devToolsExtension && window.devToolsExtension());
 const scheduleStore = createStore(scheduleReducers, window.devToolsExtension && window.devToolsExtension());
@@ -37,7 +38,7 @@ function ManufacturerCreate() {
 }
 
 
-ReactDOM.render(<Manufacturer/>, document.getElementById('root'));
+ReactDOM.render(<ManufacturerForm/>, document.getElementById('root'));
 /*ReactDOM.render(
     <Provider store={store}>
         <AppContainer/>
