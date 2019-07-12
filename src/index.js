@@ -20,8 +20,11 @@ import reducers from './redux/reducers';
 import {Provider} from 'react-redux';
 
 import scheduleReducers from './modules';
-import ManufacturerProvider from "./pages";
-import ManufacturerForm from "./pages/ManufacturerForm";
+import {ManufacturerProvider, ManufacturerForm} from "./pages";
+import SmartTodo from "./mobx/SmartTodo";
+import {TodoList} from "./mobx/TodoList";
+import ObservePerson from "./mobx/ObservePerson";
+import Person from "./mobx/Person";
 
 const store = createStore(reducers, window.devToolsExtension && window.devToolsExtension());
 const scheduleStore = createStore(scheduleReducers, window.devToolsExtension && window.devToolsExtension());
@@ -38,7 +41,7 @@ function ManufacturerCreate() {
 }
 
 
-ReactDOM.render(<ManufacturerForm/>, document.getElementById('root'));
+ReactDOM.render(<TodoList/>, document.getElementById('root'));
 /*ReactDOM.render(
     <Provider store={store}>
         <AppContainer/>

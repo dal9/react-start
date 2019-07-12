@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames/bind'
 import CreateForm from "../components/CreateForm";
+import data from "../json/data.json";
 
 
 const cx = classnames.bind();
@@ -8,34 +9,44 @@ const cx = classnames.bind();
 const formList = [
     {
         "type": "input",
-        "column": "Code",
+        "column": "code",
         "value": "식별 코드",
         "isReadOnly": true
     },
     {
         "type": "input",
-        "column": "Name",
+        "column": "name",
         "value": "이름",
         "isReadOnly": false
     },
     {
         "type": "input",
-        "column": "AuthUrl",
+        "column": "authorizationUrl",
         "value": "인증 URL",
         "isReadOnly": false
     },
     {
         "type": "input",
-        "column": "APIUrl",
-        "value": "API URL",
+        "column": "controlUrl",
+        "value": "Control URL",
         "isReadOnly": false
     }
 
 ];
 
+export default function ManufacturerForm(props) {
 
-export default function ManufacturerForm() {
+    const attr = {
+        "data": data[0],
+        "forms": formList
+    };
+
+    const handleCancel = () => console.log("cancel");
+
     return (
-        <CreateForm forms={formList}/>
+        <div className="container-fluid">
+            <h3 className={"my-3"}>제품관리</h3>
+            <CreateForm {...attr} onCancel={handleCancel}/>
+        </div>
     );
 }
