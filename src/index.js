@@ -25,6 +25,7 @@ import SmartTodo from "./mobx/SmartTodo";
 import {TodoList} from "./mobx/TodoList";
 import ObservePerson from "./mobx/ObservePerson";
 import Person from "./mobx/Person";
+import Root from "./blog/Root";
 
 const store = createStore(reducers, window.devToolsExtension && window.devToolsExtension());
 const scheduleStore = createStore(scheduleReducers, window.devToolsExtension && window.devToolsExtension());
@@ -41,7 +42,7 @@ function ManufacturerCreate() {
 }
 
 
-ReactDOM.render(<TodoList/>, document.getElementById('root'));
+ReactDOM.render(<Root/>, document.getElementById('root'));
 /*ReactDOM.render(
     <Provider store={store}>
         <AppContainer/>

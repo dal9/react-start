@@ -5,18 +5,23 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
+    "codemirror": "^5.48.0",
     "immutable": "^4.0.0-rc.12",
     "jquery": "^3.4.1",
+    "marked": "^0.7.0",
     "mobx": "^5.11.0",
     "mobx-react-lite": "^1.4.1",
     "node-sass": "^4.12.0",
+    "prismjs": "^1.16.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "redux": "^4.0.1",
-    "redux-actions": "^2.6.5"
+    "redux-actions": "^2.6.5",
+    "redux-pender": "^2.0.12"
   },
   "scripts": {
     "start": "react-scripts start",

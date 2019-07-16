@@ -1,0 +1,12 @@
+.post-body {
+  .paper {
+    padding: 2rem 2.5rem;
+    background: white;
+
+    transform: translateY(-3rem);
+    margin: 0 auto;
+    min-height: 20rem;
+
+    width: calc(100% - 2rem);
+  }
+}

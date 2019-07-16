@@ -1,0 +1,39 @@
+.post-info {
+  background: steelblue;
+  height: 24rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .info {
+    margin-top: -5rem;
+    width: 100%;
+    padding: 1rem;
+    color:white;
+    h1 {
+      font-weight: 300;
+      font-size: 3rem;
+      margin: 0;
+      word-wrap: break-word;
+    }
+    .tags {
+      margin-top: 1rem;
+      font-size: 1.25rem;
+      font-weight: 500;
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      a + a {
+        margin-left: 0.25rem;
+      }
+    }
+    .date {
+      text-align: right;
+      opacity: 0.75;
+      font-style: italic;
+      font-size: 1.25rem;
+    }
+  }
+}

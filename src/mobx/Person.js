@@ -11,7 +11,7 @@ export default function Person() {
         setName() {
             return person.name = 'Mike'
         }
-    }))
+    }));
     return useObserver(() => (
         <div>
             {person.name}
