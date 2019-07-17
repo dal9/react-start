@@ -9,11 +9,11 @@ const cx = classnames.bind();
 
 export default function Pagination(props) {
 
-    const {state, dispatch } = useContext(PageContext);
+    const {state, dispatch} = useContext(PageContext);
 
     const {className} = props;
 
-    const [pageNumber, setPageNumber] = useState(1);
+    const [currentPage, setCurrentPage] = useState(1);
     const [first, setFirst] = useState(false);
     const [last, setLast] = useState(false);
 
@@ -31,26 +31,26 @@ export default function Pagination(props) {
 
         switch(gotoPage){
             case "<" :
-                gotoPage = pageNumber - 1;
+                gotoPage = currentPage - 1;
                 break;
             case ">" :
-                gotoPage = pageNumber + 1;
+                gotoPage = currentPage + 1;
                 break;
             default :
         }
 
-        setPageNumber(gotoPage);
+        setCurrentPage(gotoPage);
 
         dispatch({type: 'gotoPage', pageNumber : gotoPage});
     };
 
     useEffect(() => {
-        if (pageNumber === 1) {
+        if (currentPage === 1) {
             setFirst(true);
         } else {
             setFirst(false);
         }
-        if (pageNumber === state.totalPages) {
+        if (currentPage === state.totalPages) {
             setLast(true);
         } else {
             setLast(false);
@@ -65,25 +65,22 @@ export default function Pagination(props) {
             <div className={cx("col-6")}>
                 <nav aria-label="Page navigation">
                     <ul className={cx("pagination pagination-sm", "justify-content-end", className)}>
-                        {range().map((pageNum, index) => {
+                        {range().map((pageNumber, index) => {
 
                             let active = false;
                             let disabled = false;
-                            let attr = {};
 
-                            if((first && pageNum === "<") || ( last && pageNum === ">")) {
+                            if((first && pageNumber === "<") || ( last && pageNumber === ">")) {
                                 disabled = true;
-                                attr = {"aria-disabled" : true};
                             }
 
-                            if(pageNum === pageNumber) {
+                            if(pageNumber === currentPage) {
                                 active = true;
-                                attr = {"aria-current" : "page"};
                             }
 
                             return (
-                                <PageItem className={cx({"active" : active},{"disabled" : disabled})} key={index} {...attr}>
-                                    <PageLink href="#" onClick={() => handleGotoPage(pageNum)}>{pageNum}{pageNum === pageNumber && (<span className="sr-only">(current)</span>)}</PageLink>
+                                <PageItem active={active} disabled={disabled} key={index}>
+                                    <PageLink href="#" number={pageNumber} active={active} onClick={handleGotoPage}/>
                                 </PageItem>
                             )
                         })}

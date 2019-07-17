@@ -1,5 +1,5 @@
 import React from 'react';
-import PageTamplate from './schedule/PageTemplate';
+import PageTamplate from './components';
 import TodoInputContainer from './containers/TodoInputContainer';
 import TodoListContainer from './containers/TodoListContainer';
 

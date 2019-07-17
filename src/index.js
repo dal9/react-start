@@ -10,8 +10,8 @@ import * as serviceWorker from './serviceWorker';
 import data from "./json/data.json";
 import List from "./components/List";
 import CreateForm from "./components/CreateForm";
-import ScheduleApp from "./ScheduleApp";
-import ScheduleAppWithRedux from "./ScheduleAppWithRedux";
+import ScheduleApp from "./schedule/ScheduleApp";
+import ScheduleAppWithRedux from "./schedule/ScheduleAppWithRedux";
 import App from "./App";
 import AppContainer from './redux/containers/App';
 
@@ -19,7 +19,7 @@ import {createStore} from 'redux';
 import reducers from './redux/reducers';
 import {Provider} from 'react-redux';
 
-import scheduleReducers from './modules';
+import scheduleReducers from './schedule/modules';
 import {ManufacturerProvider, ManufacturerForm} from "./pages";
 import SmartTodo from "./mobx/SmartTodo";
 import {TodoList} from "./mobx/TodoList";
@@ -32,7 +32,6 @@ const scheduleStore = createStore(scheduleReducers, window.devToolsExtension && 
 
 
 
-
 function ManufacturerCreate() {
     return (
         <div className="container-fluid">
@@ -42,11 +41,11 @@ function ManufacturerCreate() {
 }
 
 
-ReactDOM.render(<Root/>, document.getElementById('root'));
-/*ReactDOM.render(
+/*ReactDOM.render(<ManufacturerProvider/>, document.getElementById('root'));*/
+ReactDOM.render(
     <Provider store={store}>
         <AppContainer/>
-    </Provider>, document.getElementById('root'));*/
+    </Provider>, document.getElementById('root'));
 /*ReactDOM.render(
     <Provider store={scheduleStore}>
         <ScheduleAppWithRedux/>

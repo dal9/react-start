@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoList from '../schedule/TodoList';
+import TodoList from '../components/TodoList';
 
 import { connect } from 'react-redux';
 import {bindActionCreators} from "redux";

@@ -6,9 +6,9 @@ const cx = classnames.bind();
 
 export default function PageLink(props) {
 
-    const {className, ...rest} = props;
+    const {number, active, onClick} = props;
 
     return (
-        <a className={cx("page-link", className)} {...rest}>{props.children}</a>
+        <a href={"#"} className={cx("page-link")} onClick={() => {onClick(number)}}>{number}{active && <span className="sr-only">(current)</span>}</a>
     );
 }

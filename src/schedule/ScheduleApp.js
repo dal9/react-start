@@ -1,8 +1,8 @@
 import React, {useCallback, useState} from 'react';
-import './App.css';
-import PageTemplate from "./schedule";
-import TodoInput from "./schedule/TodoInput";
-import TodoList from "./schedule/TodoList";
+import '../App.css';
+import PageTemplate from "./components";
+import TodoInput from "./components/TodoInput";
+import TodoList from "./components/TodoList";
 
 
 let id = 1;

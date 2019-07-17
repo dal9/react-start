@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoInput from '../schedule/TodoInput';
+import TodoInput from '../components/TodoInput';
 import {connect} from 'react-redux';
 import {bindActionCreators} from "redux";
 
