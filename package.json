@@ -5,7 +5,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
-    "codemirror": "^5.48.0",
+    "codemirror": "^5.58.2",
     "immutable": "^4.0.0-rc.12",
     "jquery": "^3.4.1",
     "marked": "^0.7.0",
