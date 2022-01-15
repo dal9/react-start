@@ -8,7 +8,7 @@
     "codemirror": "^5.48.0",
     "immutable": "^4.0.0-rc.12",
     "jquery": "^3.4.1",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "mobx": "^5.11.0",
     "mobx-react-lite": "^1.4.1",
     "node-sass": "^4.12.0",
